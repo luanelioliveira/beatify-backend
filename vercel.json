@@ -3,7 +3,7 @@
   "public": true,
   "builds": [
     {
-      "src": "src/infra/http/server.ts",
+      "src": "dist/infra/http/server.js",
       "use": "@vercel/node"
     }
   ],
@@ -18,7 +18,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "src/infra/http/server.ts"
+      "dest": "dist/infra/http/server.js"
     }
   ]
 }
