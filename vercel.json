@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "infra/http/server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "infra/http/server.js"
+    }
+  ]
+}
