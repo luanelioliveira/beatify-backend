@@ -4,20 +4,17 @@
   "builds": [
     {
       "src": "dist/infra/http/server.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "dist/**"
+        ]
+      }
     }
   ],
   "routes": [
     {
-      "src": "/robots.txt",
-      "status": 204
-    },
-    {
-      "src": "/favicon.ico",
-      "status": 204
-    },
-    {
-      "src": "/(.*)",
+      "src": "/api/(.*)",
       "dest": "dist/infra/http/server.js"
     }
   ]
