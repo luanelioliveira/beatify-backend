@@ -1,5 +1,8 @@
 import "reflect-metadata"
+import env from "../config/env"
 
 import { app } from "./app"
 
-app.listen(7777, () => console.log("Server is running http://localhost:7777"))
+app.listen(env.app.port, () =>
+  console.log(`Server is running http://localhost:${env.app.port}`)
+)
