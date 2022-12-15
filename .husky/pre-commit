@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '🏗️ Styling, testing and building your project before committing'
+
+# Check Prettier standards
+npm run check-format ||
+(
+    echo '❌ Prettier Check Failed';
+    false;
+)
+
+# Check ESLint Standards
+npm run check-lint ||
+(
+    echo '❌ ESLint Check Failed'
+    false; 
+)
+
+# Check tsconfig standards
+npm run check-types ||
+(
+    echo '❌ Type Check Failed'
+    false;
+)
+
+# Check tests related
+npm run check-tests:staged ||
+(
+    echo '❌ Tests Check Failed'
+    false;
+)
+
+echo '✅ All checks is ok.'
