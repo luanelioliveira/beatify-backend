@@ -2,7 +2,7 @@
   "name": "backend-template-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/infra/http/server.js",
   "scripts": {
     "postinstall": "prisma generate --schema=./src/infra/database/prisma/schema.prisma",
     "build": "tsc && tsc-alias",
