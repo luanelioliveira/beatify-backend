@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "prisma generate --schema=./src/infra/database/prisma/schema.prisma",
     "build": "tsc && tsc-alias",
     "start": "node dist/infra/http/server.js",
     "start:dev": "ts-node-dev -r tsconfig-paths/register --exit-child --transpile-only --ignore-watch node_modules src/infra/http/server.ts",
